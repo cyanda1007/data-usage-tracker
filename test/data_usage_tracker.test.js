@@ -45,7 +45,7 @@ describe("", function () {
 
   it("should be able to show the total usage", async function () {
     const totalUse = await dataTracker.totalUsage();
-    assert.equal(true, false);
+    assert.equal(true, false , totalUse);
   });
 
   it("should be able show the available data", function () {

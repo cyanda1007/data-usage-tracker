@@ -77,8 +77,16 @@ export default function DataUsageTracker(db) {
     return minutes_used * 0.9;
   }
 
-  function totalUsage() {}
+  function totalUsage() {
+    const user = totalCostPerUser(usercode);
+    if (user instanceof Error) return user.message;
 
+    let allUsage;
+    user.rows.map((data) => {
+      allUsage = data.allUsage;
+    });
+    return allUsage * 0.9;
+  }
   function availableData(usercode) {}
 
   function mostUsedApp(usercode) {}
