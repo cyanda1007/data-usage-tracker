@@ -19,7 +19,7 @@ let dataTracker = DataUsageTracker(db);
 describe("", function () {
   beforeEach(async function () {
     await db.none(`delete from learner`);
-    await db.none("delete from applications");
+    await db.none("delete from application");
     await db.none("delete from learner_application_usage");
   });
 
